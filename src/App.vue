@@ -10,7 +10,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import 
+import { getUsers } from './db/users.js'
 
 export default {
   name: 'App',
@@ -18,18 +18,6 @@ export default {
     HelloWorld,
   },
   created() {
-    console.log('hello from me')
   },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
