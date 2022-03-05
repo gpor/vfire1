@@ -1,40 +1,115 @@
 @use '../agnostic/misc.scss' as *;
 @use '../project-no-select/colors.scss' as *;
 
+@mixin font-family-heading {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 200;
+}
+@mixin font-family-body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 300;
+    strong {
+        font-weight: 700;
+    }
+}
+
 @mixin text-color {
-    color: #fff;
-    @include light-theme {
-        color: #222;
+    color: $text-1;
+    .text-color-invert & {
+        color: $text-invert-1;
+    }
+}
+@mixin text-y-margin($sml, $full) {
+    // @include clamp-y($sml, $full, 'margin');
+    @include clamp($sml, $full, 'margin-top');
+    @include clamp($sml, $full, 'margin-bottom');
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
     }
 }
 
 
-@mixin h1 {
-    @include clamp(28, 50);
-    @include text-color;
+@mixin h1($margins: false, $color: true) {
+    @include clamp(30, 60);
+    // @include clamp(6, 15, 'word-spacing');
+    letter-spacing: -0.008em;
+    @include font-family-heading;
+    @if ($color == true) {
+        @include text-color;
+    }
+    @if ($margins == true) {
+        @include text-y-margin(18, 30);
+    }
+    line-height: 1.1;
 }
-@mixin h2 {
-    @include clamp(22, 36);
-    @include clamp(12, 18, 'margin-bottom');
-    @include text-color;
+@mixin h2($margins: false, $color: true) {
+    @include clamp(21, 40);
+    letter-spacing: -0.002em;
+    @include font-family-heading;
+    @if ($color == true) {
+        @include text-color;
+    }
+    @if ($margins == true) {
+        @include text-y-margin(14, 20);
+    }
     line-height: 1.2;
-    &:not(:first-child) {
-        @include clamp(14, 20, 'margin-top');
-    }
 }
-@mixin h3 {
-    @include clamp(18, 25);
-    @include clamp(9, 14, 'margin-bottom');
-    @include text-color;
+@mixin h3($margins: false, $color: true) {
+    @include clamp(17, 30);
+    @include font-family-heading;
+    @if ($color == true) {
+        @include text-color;
+    }
+    @if ($margins == true) {
+        @include text-y-margin(10, 16);
+    }
     line-height: 1.3;
-    &:not(:first-child) {
-        @include clamp(10, 16, 'margin-top');
-    }
 }
-@mixin p {
-    @include clamp(14, 18);
-    @include clamp(6, 12, 'margin-bottom');
-    @include text-color;
+@mixin h4($margins: false, $color: true) {
+    @include clamp(15, 26);
+    @include font-family-body;
+    @if ($color == true) {
+        @include text-color;
+    }
+    @if ($margins == true) {
+        @include text-y-margin(8, 12);
+    }
+    line-height: 1.35;
+}
+@mixin p($margins: false, $color: true) {
+    @include clamp(12, 18);
+    @include font-family-body;
+    @if ($color == true) {
+        @include text-color;
+    }
+    @if ($margins == true) {
+        @include text-y-margin(8, 12);
+    }
     line-height: 1.5;
 }
 
+@mixin link-hover {
+    transition: all 0.1s linear;
+    cursor: pointer;
+    &, &:link, &:visited {
+       color: $text-1;
+    }
+    &:hover, &:active {
+        color: $text-1;
+        opacity: 0.6;
+    }
+}
+
+@mixin nav-link {
+    @include h3;
+    @include hover($text-invert-1, rgba($text-invert-1, 0.7));
+    font-size: clamp(22px, 2vw, 35px);
+    text-decoration: none;
+    margin-bottom: 0;
+    &.-current {
+        border-bottom: 2px solid;
+    }
+}

@@ -1,5 +1,10 @@
 <template>
-  <div class="xxxxx">
+  <div class="json-server-test">
+    <button
+      @click="add"
+    >
+      add
+    </button>
   </div>
 </template>
 
@@ -7,7 +12,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'HelloWorld',
+  name: 'JsonServerTest',
   props: {
     xxxx: {
       type: Object,
@@ -19,6 +24,11 @@ export default {
       .then(res => {
         console.log('res', res)
       })
+  },
+  methods: {
+    add() {
+      console.log('add')
+    },
   },
 }
 </script>

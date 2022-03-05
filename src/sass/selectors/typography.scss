@@ -1,28 +1,44 @@
 @use '../agnostic/misc.scss' as *;
+@use '../project-no-select/colors.scss' as *;
 @use '../project-no-select/typography.scss' as *;
 
 
-body {
-    color: #222;
-    font-family: 'Source Sans Pro', sans-serif;
-    &, #{$text-els} {
-      font-weight: 300;
-      strong, b {
-        font-weight: 600;
-      }
-    }
-    h1 {
-        @include h1;
-    }
-    h2 {
-        @include h2;
-    }
-    h3 {
-        @include h3;
-    }
-    &, p {
-        @include p;
-    }
+// #{$text-els} {
+//   &:first-child {
+//       margin-top: 0;
+//   }
+//   &:last-child {
+//       margin-bottom: 0;
+//   }
+// }
+h1 {
+  @include h1(true);
+}
+h2 {
+  @include h2(true);
+  [href] {
+      text-decoration: underline;
+      color: $text-1;
   }
-  
-  
+}
+h3 {
+  @include h3(true);
+}
+h4 {
+  @include h4(true);
+}
+p {
+  @include p(true);
+  // &.p-small, .p-small & {
+  //     @include p-small;
+  // }
+  // &.p-tiny, .p-tiny & {
+  //     @include p-tiny;
+  // }
+}
+body {
+  @include p(false);
+}
+a {
+  @include link-hover;
+}

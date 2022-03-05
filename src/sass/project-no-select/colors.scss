@@ -1,9 +1,12 @@
 
 @mixin light-theme {
-    /* enable light theme by changing to 'prefers-color-scheme: light' */
-    @media (prefers-color-scheme: light-foo) {
+    @media (prefers-color-scheme: light) {
+        @content;
     }
-    @content;
 }
+
+
+$text-1: #000;
+$text-invert-1: #fff;
 
 

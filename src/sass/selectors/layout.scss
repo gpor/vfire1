@@ -1,26 +1,6 @@
 @use '../project-no-select/colors.scss' as *;
 
 body {
-    background-color: #222;
-    padding-top: 10vh;
-    @include light-theme {
-        background-color: #fff;
-    }
-}
-
-.center-frame {
-    width: 90%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.flex-end {
-    display: flex;
-    justify-content: flex-end;
-    > div {
-        width: 100%;
-    }
 }
 
 
