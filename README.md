@@ -1,4 +1,7 @@
-# vf1
+2022-03-04
+Vue Firebase experiment (hoping to deploy for 1st time)
+created via @vue/cli, sass, firebase
+notes/web/exp/vf1
 
 ## Project setup
 ```
