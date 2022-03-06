@@ -1,22 +1,36 @@
 <template>
   <div id="app">
-    <h1>Lee Stevens</h1>
-    <h2>I create smooth user experiences</h2>
-    <p>The quick brown fox jumps over the lazy dog. I quickly packed my lunch box for the zoo with grapes, veal, and quince jam sandwiches.</p>
-    <JsonServerTest msg="Welcome to Your Vue.js App" />
+    <nav>
+      <router-link to="/">
+        Home
+      </router-link> |
+      <router-link to="/about">
+        About
+      </router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
 
-<script>
-import JsonServerTest from './components/JsonServerTest.vue'
-import { getUsers } from './db/users.js'
-
-export default {
-  name: 'App',
-  components: {
-    JsonServerTest,
-  },
-  created() {
-  },
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
-</script>
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
