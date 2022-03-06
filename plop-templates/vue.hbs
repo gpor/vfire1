@@ -1,0 +1,22 @@
+<template>
+  <div class="{{ kebabCase name }}">
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  name: '{{ properCase name }}',
+  props: {
+    {{ properCase name }}: {
+      type: Object,
+      default: ()=>new Object,
+    },
+  },
+  created() {
+  },
+  methods: {
+  },
+}
+</script>

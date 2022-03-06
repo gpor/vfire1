@@ -1,21 +1,31 @@
 <template>
-  <div class="home">
-    <img
-      alt="Vue logo"
-      src="../assets/logo.png"
+  <main class="home">
+    <section
+      class="-lg"
     >
-    <JsonServerTest msg="Welcome to Your Vue.js App" />
-  </div>
+      <h1>Software Developer</h1>
+    </section>
+    <section
+      class="-left"
+    >
+      <h2>Software Developer</h2>
+      <p>The quick brown fox jumps over the lazy dog.</p>
+    </section>
+    <section
+      class="bg-img"
+      :style="{'background-image': 'url(\'/img/bg/circuit-board.jpg\')'}"
+    >
+    </section>
+  </main>
 </template>
 
 <script>
-// @ is an alias to /src
-import JsonServerTest from '@/components/JsonServerTest.vue'
+// import JsonServerTest from '@/components/JsonServerTest.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    JsonServerTest,
+    // JsonServerTest,
   },
 }
 </script>

@@ -40,5 +40,5 @@ body {
   @include p(false);
 }
 a {
-  @include link-hover;
+  @include link-hover($text-1, rgba($text-invert-1, 0.7));
 }

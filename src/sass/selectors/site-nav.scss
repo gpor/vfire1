@@ -1,0 +1,46 @@
+@use '../agnostic/misc.scss' as lib;
+@use '../project-no-select/colors.scss' as *;
+@use '../project-no-select/typography.scss' as *;
+
+body {
+    margin: 0;
+}
+
+
+
+.site-nav {
+    padding: 100px 0 30px;
+    > div {
+        @include lib.center-frame;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            position: relative;
+            img {
+                @include lib.clamp(20, 40, 'width');
+                // position: absolute;
+                // left: -4vw;
+                display: inline-block;
+            }
+            h1 {
+                @include h3(false);
+                display: inline-block;
+                margin: 0;
+            }
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            a {
+                @include nav-link;
+                display: inline-block;
+            }
+        }
+    }
+}

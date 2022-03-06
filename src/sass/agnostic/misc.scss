@@ -50,8 +50,33 @@ $p-els: 'p, li, td';
 }
 
 
-@mixin center-frame($body-max-width, $width: 96%) {
-    @include margin-x;
-    max-width: $body-max-width;
-    width: $width;
+@mixin frame-padding($side, $frame-max: 1400px) {
+    padding-#{$side}: clamp(5vw, calc(50vw - #{($frame-max / 2)}), 50vw)
+}
+
+@mixin center-frame($frame-max: 1400px) {
+    @include frame-padding('left', #{$frame-max});
+    @include frame-padding('right', #{$frame-max});
+}
+
+$transition-speed: 0.2s linear;
+
+@mixin hover($start, $hover, $prop-name: color) {
+    #{$prop-name}: $start;
+    transition: #{$prop-name} #{$transition-speed};
+    &:hover {
+        #{$prop-name}: $hover;
+    }
+}
+
+@mixin link-hover($start, $hover) {
+    transition: all 0.2s linear;
+    cursor: pointer;
+    &, &:link, &:visited {
+       color: $start;
+    }
+    &:hover, &:active {
+        color: $hover;
+        opacity: 0.6;
+    }
 }

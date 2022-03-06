@@ -1,6 +1,5 @@
 <template>
   <div class="json-server-test">
-    <img src="/img/logo/orangeGreen.svg" />
     <button
       @click="add"
     >
@@ -15,10 +14,6 @@ import axios from 'axios'
 export default {
   name: 'JsonServerTest',
   props: {
-    xxxx: {
-      type: Object,
-      default: ()=>{return{}},
-    },
   },
   created() {
     axios.get('http://localhost:3000/posts')

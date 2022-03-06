@@ -58,7 +58,7 @@
     line-height: 1.2;
 }
 @mixin h3($margins: false, $color: true) {
-    @include clamp(17, 30);
+    @include clamp(17, 28);
     @include font-family-heading;
     @if ($color == true) {
         @include text-color;
@@ -69,7 +69,18 @@
     line-height: 1.3;
 }
 @mixin h4($margins: false, $color: true) {
-    @include clamp(15, 26);
+    @include clamp(15, 20);
+    @include font-family-body;
+    @if ($color == true) {
+        @include text-color;
+    }
+    @if ($margins == true) {
+        @include text-y-margin(8, 12);
+    }
+    line-height: 1.35;
+}
+@mixin h5($margins: false, $color: true) {
+    @include clamp(14, 18);
     @include font-family-body;
     @if ($color == true) {
         @include text-color;
@@ -80,7 +91,7 @@
     line-height: 1.35;
 }
 @mixin p($margins: false, $color: true) {
-    @include clamp(12, 18);
+    @include clamp(12, 17);
     @include font-family-body;
     @if ($color == true) {
         @include text-color;
@@ -91,22 +102,11 @@
     line-height: 1.5;
 }
 
-@mixin link-hover {
-    transition: all 0.1s linear;
-    cursor: pointer;
-    &, &:link, &:visited {
-       color: $text-1;
-    }
-    &:hover, &:active {
-        color: $text-1;
-        opacity: 0.6;
-    }
-}
 
 @mixin nav-link {
-    @include h3;
-    @include hover($text-invert-1, rgba($text-invert-1, 0.7));
-    font-size: clamp(22px, 2vw, 35px);
+    @include h4(false);
+    @include link-hover($text-1, rgba($text-1, 0.7));
+    @include pad-y(3px);
     text-decoration: none;
     margin-bottom: 0;
     &.-current {

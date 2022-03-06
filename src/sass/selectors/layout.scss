@@ -1,7 +1,51 @@
+@use '../agnostic/misc.scss' as lib;
 @use '../project-no-select/colors.scss' as *;
+@use '../project-no-select/layout.scss' as *;
 
 body {
+    margin: 0;
+    background-image: url('/public/img/bg/faint-gradient-2.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    > section {
+        @include lib.clamp(25, 50, 'padding');
+        min-height: clamp(400px, 60vh, 80vh);
+        &.-left {
+            @include lib.frame-padding('left', 1400px);
+        }
+        &.-right {
+            @include lib.frame-padding('right', 1400px);
+        }
+        &.-lg {
+            @include lib.clamp(40, 70, 'padding-top');
+            @include lib.clamp(40, 70, 'padding-bottom');
+            min-height: clamp(300px, 40vh, 60vh);
+            grid-column: 1 / span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    > .bg-img {
+        background-size: cover;
+        background-position: center;
+    }
+}
 
-
+.bg-orange {
+    background-color: $orange;
+    #{lib.$text-els} {
+        color: $text-invert-1;
+    }
+}
+.bg-green {
+    background-color: $green;
+    #{lib.$text-els} {
+        color: $text-invert-1;
+    }
+}
