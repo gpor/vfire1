@@ -4,6 +4,7 @@
       class="-lg"
     >
       <h1>Software Developer</h1>
+      <p>The quick brown fox jumps over the lazy dog.</p>
     </section>
     <section
       class="-left"
