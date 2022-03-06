@@ -1,5 +1,6 @@
 <template>
   <div class="json-server-test">
+    <img src="/img/logo/orangeGreen.svg" />
     <button
       @click="add"
     >
