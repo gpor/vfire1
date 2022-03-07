@@ -5,7 +5,7 @@
         class="-logo"
         href="/"
       >
-        <img src="/img/logo/orangeGreen.svg" />
+        <img src="/img/logo/greenBlack2.svg" />
         <h1>Lee Stevens</h1>
       </a>
       <nav>
