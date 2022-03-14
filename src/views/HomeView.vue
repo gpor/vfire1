@@ -3,14 +3,13 @@
     <section
       class="-lg"
     >
-      <h1>Software Developer</h1>
-      <p>The quick brown fox jumps over the lazy dog.</p>
+      <h1>I Create Smooth, Intuitive User Experience</h1>
     </section>
     <section
       class="-left"
     >
       <h2>Software Developer</h2>
-      <p>The quick brown fox jumps over the lazy dog.</p>
+      <h3>Javascript, Vue, React, Python, NPM, CSS3, Sass, HTML5, PHP, Linux, Git</h3>
     </section>
     <section
       class="bg-img"

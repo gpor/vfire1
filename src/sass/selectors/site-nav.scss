@@ -18,11 +18,11 @@ body {
         .-logo {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 14px;
             text-decoration: none;
             position: relative;
             img {
-                @include lib.clamp(20, 40, 'width');
+                @include lib.clamp(30, 60, 'width');
                 // position: absolute;
                 // left: -4vw;
                 display: inline-block;
